@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0C0BE1A3-BA5B-41A1-B578-F20777D02304}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Questor.Modules</RootNamespace>
+    <AssemblyName>Questor.Modules</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <OutputPath>$(ProjectDir)..\bin\$(Configuration)\</OutputPath>
+    <CodeAnalysisLogFile>$(ProjectDir)..\bin\$(Configuration)\$(TargetName).$(TargetExt).CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisRuleSetDirectories>$(CodeAnalysisStaticAnalysisDirectory)Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>$(CodeAnalysisPath)Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;UseDirectEve</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;UseDirectEve</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DirectEve, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DirectEve\DirectEve.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Lavish.InnerSpace, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9029a3ab4cbe108d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(ProgramFiles)\Innerspace\Lavish.InnerSpace.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BackgroundTasks\NavigateOnGrid.cs" />
+    <Compile Include="Caching\TargetingCache.cs" />
+    <Compile Include="Lookup\TypeID.cs" />
+    <Compile Include="States\CombatHelperBehaviorState.cs" />
+    <Compile Include="States\DebugBehaviorState.cs" />
+    <Compile Include="States\DebugHangarsBehaviorState.cs" />
+    <Compile Include="States\DedicatedBookmarkSalvagerBehaviorState.cs" />
+    <Compile Include="States\DirectionalScannerBehaviorState.cs" />
+    <Compile Include="States\DropState.cs" />
+    <Compile Include="Alerts\Audio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caching\ItemCache.cs" />
+    <Compile Include="Lookup\CombatMissionSettings.cs" />
+    <Compile Include="Actions\Action.cs" />
+    <Compile Include="States\CombatMissionsBehaviorState.cs" />
+    <Compile Include="States\MiningState.cs" />
+    <Compile Include="States\MissionActionState.cs" />
+    <Compile Include="Actions\Buy.cs" />
+    <Compile Include="Actions\Drop.cs" />
+    <Compile Include="Actions\Grab.cs" />
+    <Compile Include="Lookup\InvType.cs" />
+    <Compile Include="Actions\Sell.cs" />
+    <Compile Include="States\BuyState.cs" />
+    <Compile Include="States\BuyLPIState.cs" />
+    <Compile Include="States\GrabState.cs" />
+    <Compile Include="States\QuestorState.cs" />
+    <Compile Include="States\States.cs" />
+    <Compile Include="States\SellState.cs" />
+    <Compile Include="States\StorylineState.cs" />
+    <Compile Include="States\ValueDumpState.cs" />
+    <Compile Include="Actions\AgentInteraction.cs" />
+    <Compile Include="Lookup\AgentInteractionPurpose.cs" />
+    <Compile Include="States\AgentInteractionState.cs" />
+    <Compile Include="Lookup\Ammo.cs" />
+    <Compile Include="Actions\Arm.cs" />
+    <Compile Include="States\ArmState.cs" />
+    <Compile Include="Caching\Cache.cs" />
+    <Compile Include="Lookup\CharSchedule.cs" />
+    <Compile Include="States\CleanupState.cs" />
+    <Compile Include="BackgroundTasks\Cleanup.cs" />
+    <Compile Include="Logging\Logging.cs" />
+    <Compile Include="Lookup\CategoryID.cs" />
+    <Compile Include="Lookup\GroupID.cs" />
+    <Compile Include="Actions\BookmarkDestination.cs" />
+    <Compile Include="Actions\MissionBookmarkDestination.cs" />
+    <Compile Include="Actions\SolarSystemDestination.cs" />
+    <Compile Include="Actions\StationDestination.cs" />
+    <Compile Include="Activities\Traveler.cs" />
+    <Compile Include="Actions\TravelerDestination.cs" />
+    <Compile Include="States\TravelerState.cs" />
+    <Compile Include="States\StatisticsState.cs" />
+    <Compile Include="Logging\Statistics.cs" />
+    <Compile Include="Lookup\SelectAgent.cs" />
+    <Compile Include="Actions\ScanInteraction.cs" />
+    <Compile Include="States\ScanInteractionState.cs" />
+    <Compile Include="States\LocalWatchState.cs" />
+    <Compile Include="BackgroundTasks\LocalWatch.cs" />
+    <Compile Include="Combat\Combat.cs" />
+    <Compile Include="States\CombatState.cs" />
+    <Compile Include="Activities\CourierMissionCtrl.cs" />
+    <Compile Include="States\CourierMissionCtrlState.cs" />
+    <Compile Include="Lookup\DamageType.cs" />
+    <Compile Include="Actions\DebugModule.cs" />
+    <Compile Include="States\DebugModuleState.cs" />
+    <Compile Include="Lookup\Distances.cs" />
+    <Compile Include="States\SwitchShipState.cs" />
+    <Compile Include="Actions\SwitchShip.cs" />
+    <Compile Include="BackgroundTasks\Defense.cs" />
+    <Compile Include="Combat\Drones.cs" />
+    <Compile Include="States\DroneState.cs" />
+    <Compile Include="Caching\EntityCache.cs" />
+    <Compile Include="Actions\Fitting.cs" />
+    <Compile Include="Activities\CombatMissionCtrl.cs" />
+    <Compile Include="States\CombatMissionCtrlState.cs" />
+    <Compile Include="States\MissionState.cs" />
+    <Compile Include="Caching\ModuleCache.cs" />
+    <Compile Include="BackgroundTasks\Panic.cs" />
+    <Compile Include="States\PanicState.cs" />
+    <Compile Include="Lookup\Priority.cs" />
+    <Compile Include="Lookup\PriorityTarget.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BackgroundTasks\Scoop.cs" />
+    <Compile Include="States\ScoopState.cs" />
+    <Compile Include="BackgroundTasks\Salvage.cs" />
+    <Compile Include="States\SalvageState.cs" />
+    <Compile Include="Lookup\Settings.cs" />
+    <Compile Include="Lookup\ShipTargetValue.cs" />
+    <Compile Include="Lookup\Time.cs" />
+    <Compile Include="Actions\UnloadLoot.cs" />
+    <Compile Include="States\UnloadLootState.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Alerts\Audio.resx">
+      <DependentUpon>Audio.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
