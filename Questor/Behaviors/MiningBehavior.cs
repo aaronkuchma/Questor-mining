@@ -351,6 +351,12 @@ namespace Questor.Behaviors
 
 
                 case MiningState.MineAsteroid:
+                    if (Cache.Instance.EntityById(_targetAsteroid.Id) == null)
+                    {
+                        //asteroid is depleted
+                        _States.CurrentMiningState = MiningState.Mine;
+                        return;
+                    }
                     _targetAsteroid = Cache.Instance.EntityById(_targetAsteroid.Id);
                     _combat.ProcessState();
 
@@ -378,8 +384,12 @@ namespace Questor.Behaviors
                     //check if we're full
 
                     if (!Cache.Instance.OpenCargoHold("Miner: Check cargohold capacity")) break;
-                    if (Cache.Instance.CargoHold.IsValid 
-                        && (Cache.Instance.CargoHold.Capacity == Cache.Instance.CargoHold.UsedCapacity)
+
+                    Logging.Log("Miner:MineAsteroid", "Cargo Capacity is: " + Cache.Instance.CargoHold.Capacity 
+                        + ", Used: " + Cache.Instance.CargoHold.UsedCapacity, Logging.White);
+
+                    if (Cache.Instance.CargoHold.IsValid
+                        && (Cache.Instance.CargoHold.UsedCapacity >= Cache.Instance.CargoHold.Capacity * .9)
                         && Cache.Instance.CargoHold.Capacity > 0)
                     {
                         Logging.Log("Miner:MineAsteroid", "We are full, go to base to unload. Capacity is: " + Cache.Instance.CargoHold.Capacity
